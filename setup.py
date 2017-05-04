@@ -1,6 +1,5 @@
 # coding: utf-8
 
-import sys
 from setuptools import setup, find_packages
 
 NAME = "swagger_server"
@@ -15,11 +14,6 @@ VERSION = "1.0.0"
 
 REQUIRES = [
     "connexion",
-    "robotlib"
-]
-
-DEPENDENCIES = [
-    'git+https://github.com/bigmstone/robotlib.git#egg=robotlib'
 ]
 
 setup(
@@ -30,7 +24,6 @@ setup(
     url="",
     keywords=["Swagger", "Robot Arm"],
     install_requires=REQUIRES,
-    dependency_links=DEPENDENCIES,
     packages=find_packages(),
     package_data={'': ['swagger/swagger.yaml']},
     include_package_data=True,
