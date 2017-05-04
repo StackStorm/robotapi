@@ -1,0 +1,323 @@
+---
+swagger: "2.0"
+info:
+  description: "OpenAPI definition for robotarm"
+  version: "1.0.0"
+  title: "Robot Arm"
+  termsOfService: ""
+  contact:
+    email: "matthew99@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "randompi.raspberry.pi"
+basePath: "/v1"
+schemes:
+- "http"
+paths:
+  /arm/grip:
+    get:
+      tags:
+      - "grip"
+      summary: "Get grip location"
+      description: ""
+      operationId: "read_grip"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+      x-swagger-router-controller: "swagger_server.controllers.grip_controller"
+    put:
+      tags:
+      - "grip"
+      summary: "Set grip location"
+      description: ""
+      operationId: "change_grip"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Location object"
+        required: true
+        schema:
+          $ref: "#/definitions/body"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.grip_controller"
+  /arm/wrist:
+    get:
+      tags:
+      - "wrist"
+      summary: "Get wrist location"
+      description: ""
+      operationId: "read_wrist"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+      x-swagger-router-controller: "swagger_server.controllers.wrist_controller"
+    put:
+      tags:
+      - "wrist"
+      summary: "Set wrist location"
+      description: ""
+      operationId: "change_wrist"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Location object"
+        required: true
+        schema:
+          $ref: "#/definitions/body_1"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.wrist_controller"
+  /arm/hand:
+    get:
+      tags:
+      - "hand"
+      summary: "Get hand location"
+      description: ""
+      operationId: "read_hand"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+      x-swagger-router-controller: "swagger_server.controllers.hand_controller"
+    put:
+      tags:
+      - "hand"
+      summary: "Set hand location"
+      description: ""
+      operationId: "change_hand"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Location object"
+        required: true
+        schema:
+          $ref: "#/definitions/body_2"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.hand_controller"
+  /arm/elbow:
+    get:
+      tags:
+      - "elbow"
+      summary: "Get elbow location"
+      description: ""
+      operationId: "read_elbow"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+      x-swagger-router-controller: "swagger_server.controllers.elbow_controller"
+    put:
+      tags:
+      - "elbow"
+      summary: "Set elbow location"
+      description: ""
+      operationId: "change_elbow"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Location object"
+        required: true
+        schema:
+          $ref: "#/definitions/body_3"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.elbow_controller"
+  /arm/sholder:
+    get:
+      tags:
+      - "sholder"
+      summary: "Get sholder location"
+      description: ""
+      operationId: "read_sholder"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+      x-swagger-router-controller: "swagger_server.controllers.sholder_controller"
+    put:
+      tags:
+      - "sholder"
+      summary: "Set sholder location"
+      description: ""
+      operationId: "change_sholder"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Location object"
+        required: true
+        schema:
+          $ref: "#/definitions/body_4"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.sholder_controller"
+  /arm/pivot:
+    get:
+      tags:
+      - "pivot"
+      summary: "Get pivot location"
+      description: ""
+      operationId: "read_pivot"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+      x-swagger-router-controller: "swagger_server.controllers.pivot_controller"
+    put:
+      tags:
+      - "pivot"
+      summary: "Set pivot location"
+      description: ""
+      operationId: "change_pivot"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Location object"
+        required: true
+        schema:
+          $ref: "#/definitions/body_5"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.pivot_controller"
+definitions:
+  Location:
+    type: "object"
+    properties:
+      location:
+        type: "number"
+        format: "float"
+  inline_response_200:
+    properties:
+      location:
+        type: "number"
+        format: "float"
+  body:
+    type: "object"
+    properties:
+      location:
+        type: "number"
+        format: "float"
+  body_1:
+    type: "object"
+    properties:
+      location:
+        type: "number"
+        format: "float"
+  body_2:
+    type: "object"
+    properties:
+      location:
+        type: "number"
+        format: "float"
+  body_3:
+    type: "object"
+    properties:
+      location:
+        type: "number"
+        format: "float"
+  body_4:
+    type: "object"
+    properties:
+      location:
+        type: "number"
+        format: "float"
+  body_5:
+    type: "object"
+    properties:
+      location:
+        type: "number"
+        format: "float"
