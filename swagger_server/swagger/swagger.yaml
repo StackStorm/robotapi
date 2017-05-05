@@ -187,13 +187,13 @@ paths:
         405:
           description: "Invalid input"
       x-swagger-router-controller: "swagger_server.controllers.elbow_controller"
-  /arm/sholder:
+  /arm/shoulder:
     get:
       tags:
-      - "sholder"
-      summary: "Get sholder location"
+      - "shoulder"
+      summary: "Get shoulder location"
       description: ""
-      operationId: "read_sholder"
+      operationId: "read_shoulder"
       consumes:
       - "application/json"
       produces:
@@ -204,13 +204,13 @@ paths:
           description: "Success"
           schema:
             $ref: "#/definitions/inline_response_200"
-      x-swagger-router-controller: "swagger_server.controllers.sholder_controller"
+      x-swagger-router-controller: "swagger_server.controllers.shoulder_controller"
     put:
       tags:
-      - "sholder"
-      summary: "Set sholder location"
+      - "shoulder"
+      summary: "Set shoulder location"
       description: ""
-      operationId: "change_sholder"
+      operationId: "change_shoulder"
       consumes:
       - "application/json"
       produces:
@@ -229,7 +229,7 @@ paths:
             $ref: "#/definitions/inline_response_200"
         405:
           description: "Invalid input"
-      x-swagger-router-controller: "swagger_server.controllers.sholder_controller"
+      x-swagger-router-controller: "swagger_server.controllers.shoulder_controller"
   /arm/pivot:
     get:
       tags:

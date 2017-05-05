@@ -12,26 +12,26 @@ from flask import json
 class TestSholderController(BaseTestCase):
     """ SholderController integration test stubs """
 
-    def test_change_sholder(self):
+    def test_change_shoulder(self):
         """
-        Test case for change_sholder
+        Test case for change_shoulder
 
-        Set sholder location
+        Set shoulder location
         """
         body = Body4()
-        response = self.client.open('/v1/arm/sholder',
+        response = self.client.open('/v1/arm/shoulder',
                                     method='PUT',
                                     data=json.dumps(body),
                                     content_type='application/json')
         self.assert200(response, "Response body is : " + response.data.decode('utf-8'))
 
-    def test_read_sholder(self):
+    def test_read_shoulder(self):
         """
-        Test case for read_sholder
+        Test case for read_shoulder
 
-        Get sholder location
+        Get shoulder location
         """
-        response = self.client.open('/v1/arm/sholder',
+        response = self.client.open('/v1/arm/shoulder',
                                     method='GET',
                                     content_type='application/json')
         self.assert200(response, "Response body is : " + response.data.decode('utf-8'))

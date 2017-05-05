@@ -4,9 +4,9 @@ from swagger_server.models.inline_response200 import InlineResponse200
 from swagger_server.common.constants import AX12
 
 
-def change_sholder(body):
+def change_shoulder(body):
     """
-    Set sholder location
+    Set shoulder location
 
     :param body: Location object
     :type body: dict | bytes
@@ -18,18 +18,18 @@ def change_sholder(body):
 
     location = body.location
 
-    AX12.sholder(location)
+    AX12.shoulder(location)
 
     return InlineResponse200(location)
 
 
-def read_sholder():
+def read_shoulder():
     """
-    Get sholder location
+    Get shoulder location
 
 
     :rtype: InlineResponse200
     """
-    location = AX12.get_sholder()
+    location = AX12.get_shoulder()
 
     return InlineResponse200(location)
