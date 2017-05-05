@@ -9,8 +9,8 @@ from six import BytesIO
 from flask import json
 
 
-class TestSholderController(BaseTestCase):
-    """ SholderController integration test stubs """
+class TestShoulderController(BaseTestCase):
+    """ ShoulderController integration test stubs """
 
     def test_change_shoulder(self):
         """
