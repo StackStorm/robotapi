@@ -31,7 +31,7 @@ paths:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
       x-swagger-router-controller: "swagger_server.controllers.grip_controller"
     put:
       tags:
@@ -49,12 +49,55 @@ paths:
         description: "Location object"
         required: true
         schema:
-          $ref: "#/definitions/body"
+          $ref: "#/definitions/Location"
       responses:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.grip_controller"
+  /arm/grip/torque:
+    get:
+      tags:
+      - "grip"
+      summary: "Get grip torque"
+      description: ""
+      operationId: "read_grip_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
+      x-swagger-router-controller: "swagger_server.controllers.grip_controller"
+    put:
+      tags:
+      - "grip"
+      summary: "Set grip torque"
+      description: ""
+      operationId: "change_grip_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "State object"
+        required: true
+        schema:
+          $ref: "#/definitions/State"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
         405:
           description: "Invalid input"
       x-swagger-router-controller: "swagger_server.controllers.grip_controller"
@@ -74,7 +117,7 @@ paths:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
       x-swagger-router-controller: "swagger_server.controllers.wrist_controller"
     put:
       tags:
@@ -92,12 +135,55 @@ paths:
         description: "Location object"
         required: true
         schema:
-          $ref: "#/definitions/body_1"
+          $ref: "#/definitions/Location"
       responses:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.wrist_controller"
+  /arm/wrist/torque:
+    get:
+      tags:
+      - "wrist"
+      summary: "Get wrist torque"
+      description: ""
+      operationId: "read_wrist_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
+      x-swagger-router-controller: "swagger_server.controllers.wrist_controller"
+    put:
+      tags:
+      - "wrist"
+      summary: "Set wrist torque"
+      description: ""
+      operationId: "change_wrist_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Sate object"
+        required: true
+        schema:
+          $ref: "#/definitions/State"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
         405:
           description: "Invalid input"
       x-swagger-router-controller: "swagger_server.controllers.wrist_controller"
@@ -117,7 +203,7 @@ paths:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
       x-swagger-router-controller: "swagger_server.controllers.hand_controller"
     put:
       tags:
@@ -135,12 +221,55 @@ paths:
         description: "Location object"
         required: true
         schema:
-          $ref: "#/definitions/body_2"
+          $ref: "#/definitions/Location"
       responses:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.hand_controller"
+  /arm/hand/torque:
+    get:
+      tags:
+      - "hand"
+      summary: "Get hand torque"
+      description: ""
+      operationId: "read_hand_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
+      x-swagger-router-controller: "swagger_server.controllers.hand_controller"
+    put:
+      tags:
+      - "hand"
+      summary: "Set hand torque"
+      description: ""
+      operationId: "change_hand_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "State object"
+        required: true
+        schema:
+          $ref: "#/definitions/State"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
         405:
           description: "Invalid input"
       x-swagger-router-controller: "swagger_server.controllers.hand_controller"
@@ -160,7 +289,7 @@ paths:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
       x-swagger-router-controller: "swagger_server.controllers.elbow_controller"
     put:
       tags:
@@ -178,12 +307,55 @@ paths:
         description: "Location object"
         required: true
         schema:
-          $ref: "#/definitions/body_3"
+          $ref: "#/definitions/Location"
       responses:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.elbow_controller"
+  /arm/elbow/torque:
+    get:
+      tags:
+      - "elbow"
+      summary: "Get elbow torque"
+      description: ""
+      operationId: "read_elbow_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
+      x-swagger-router-controller: "swagger_server.controllers.elbow_controller"
+    put:
+      tags:
+      - "elbow"
+      summary: "Set elbow torque"
+      description: ""
+      operationId: "change_elbow_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "State object"
+        required: true
+        schema:
+          $ref: "#/definitions/State"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
         405:
           description: "Invalid input"
       x-swagger-router-controller: "swagger_server.controllers.elbow_controller"
@@ -203,7 +375,7 @@ paths:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
       x-swagger-router-controller: "swagger_server.controllers.shoulder_controller"
     put:
       tags:
@@ -221,12 +393,55 @@ paths:
         description: "Location object"
         required: true
         schema:
-          $ref: "#/definitions/body_4"
+          $ref: "#/definitions/Location"
       responses:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.shoulder_controller"
+  /arm/shoulder/torque:
+    get:
+      tags:
+      - "shoulder"
+      summary: "Get shoulder torque"
+      description: ""
+      operationId: "read_shoulder_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
+      x-swagger-router-controller: "swagger_server.controllers.shoulder_controller"
+    put:
+      tags:
+      - "shoulder"
+      summary: "Set shoulder torque"
+      description: ""
+      operationId: "change_shoulder_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "State object"
+        required: true
+        schema:
+          $ref: "#/definitions/State"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
         405:
           description: "Invalid input"
       x-swagger-router-controller: "swagger_server.controllers.shoulder_controller"
@@ -246,7 +461,7 @@ paths:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
       x-swagger-router-controller: "swagger_server.controllers.pivot_controller"
     put:
       tags:
@@ -264,12 +479,55 @@ paths:
         description: "Location object"
         required: true
         schema:
-          $ref: "#/definitions/body_5"
+          $ref: "#/definitions/Location"
       responses:
         200:
           description: "Success"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/Location"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.pivot_controller"
+  /arm/pivot/torque:
+    get:
+      tags:
+      - "pivot"
+      summary: "Get pivot torque"
+      description: ""
+      operationId: "read_pivot_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
+      x-swagger-router-controller: "swagger_server.controllers.pivot_controller"
+    put:
+      tags:
+      - "pivot"
+      summary: "Set pivot torque"
+      description: ""
+      operationId: "change_pivot_torque"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "State object"
+        required: true
+        schema:
+          $ref: "#/definitions/State"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/State"
         405:
           description: "Invalid input"
       x-swagger-router-controller: "swagger_server.controllers.pivot_controller"
@@ -280,44 +538,8 @@ definitions:
       location:
         type: "number"
         format: "float"
-  inline_response_200:
-    properties:
-      location:
-        type: "number"
-        format: "float"
-  body:
+  State:
     type: "object"
     properties:
-      location:
-        type: "number"
-        format: "float"
-  body_1:
-    type: "object"
-    properties:
-      location:
-        type: "number"
-        format: "float"
-  body_2:
-    type: "object"
-    properties:
-      location:
-        type: "number"
-        format: "float"
-  body_3:
-    type: "object"
-    properties:
-      location:
-        type: "number"
-        format: "float"
-  body_4:
-    type: "object"
-    properties:
-      location:
-        type: "number"
-        format: "float"
-  body_5:
-    type: "object"
-    properties:
-      location:
-        type: "number"
-        format: "float"
+      state:
+        type: "boolean"

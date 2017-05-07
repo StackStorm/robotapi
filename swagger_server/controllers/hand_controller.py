@@ -1,6 +1,6 @@
 import connexion
-from swagger_server.models.body2 import Body2
-from swagger_server.models.inline_response200 import InlineResponse200
+from swagger_server.models.location import Location
+from swagger_server.models.state import State
 from swagger_server.common.constants import AX12
 
 
@@ -11,16 +11,35 @@ def change_hand(body):
     :param body: Location object
     :type body: dict | bytes
 
-    :rtype: InlineResponse200
+    :rtype: Location
     """
     if connexion.request.is_json:
-        body = Body2.from_dict(connexion.request.get_json())
+        body = Location.from_dict(connexion.request.get_json())
 
     location = body.location
 
     AX12.hand(location)
 
-    return InlineResponse200(location)
+    return Location(location)
+
+
+def change_hand_torque(body):
+    """
+    Set hand torque
+
+    :param body: State object
+    :type body: dict | bytes
+
+    :rtype: State
+    """
+    if connexion.request.is_json:
+        body = State.from_dict(connexion.request.get_json())
+
+    state = body.state
+
+    AX12.set_hand_state(state)
+
+    return State(state)
 
 
 def read_hand():
@@ -28,8 +47,18 @@ def read_hand():
     Get hand location
 
 
-    :rtype: InlineResponse200
+    :rtype: Location
     """
     location = AX12.get_hand()
 
-    return InlineResponse200(location)
+    return Location(location)
+
+
+def read_hand_torque():
+    """
+    Get hand torque
+
+
+    :rtype: State
+    """
+    return State(True)

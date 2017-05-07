@@ -2,8 +2,8 @@
 
 from __future__ import absolute_import
 
-from swagger_server.models.body1 import Body1
-from swagger_server.models.inline_response200 import InlineResponse200
+from swagger_server.models.location import Location
+from swagger_server.models.state import State
 from . import BaseTestCase
 from six import BytesIO
 from flask import json
@@ -18,8 +18,21 @@ class TestWristController(BaseTestCase):
 
         Set wrist location
         """
-        body = Body1()
+        body = Location()
         response = self.client.open('/v1/arm/wrist',
+                                    method='PUT',
+                                    data=json.dumps(body),
+                                    content_type='application/json')
+        self.assert200(response, "Response body is : " + response.data.decode('utf-8'))
+
+    def test_change_wrist_torque(self):
+        """
+        Test case for change_wrist_torque
+
+        Set wrist torque
+        """
+        body = State()
+        response = self.client.open('/v1/arm/wrist/torque',
                                     method='PUT',
                                     data=json.dumps(body),
                                     content_type='application/json')
@@ -32,6 +45,17 @@ class TestWristController(BaseTestCase):
         Get wrist location
         """
         response = self.client.open('/v1/arm/wrist',
+                                    method='GET',
+                                    content_type='application/json')
+        self.assert200(response, "Response body is : " + response.data.decode('utf-8'))
+
+    def test_read_wrist_torque(self):
+        """
+        Test case for read_wrist_torque
+
+        Get wrist torque
+        """
+        response = self.client.open('/v1/arm/wrist/torque',
                                     method='GET',
                                     content_type='application/json')
         self.assert200(response, "Response body is : " + response.data.decode('utf-8'))
