@@ -37,7 +37,7 @@ def change_shoulder_torque(body):
 
     state = body.state
 
-    AX12.set_hand_state(state)
+    AX12.set_shoulder_state(state)
 
     return State(state)
 

@@ -37,7 +37,7 @@ def change_wrist_torque(body):
 
     state = body.state
 
-    AX12.set_hand_state(state)
+    AX12.set_wrist_state(state)
 
     return State(state)
 

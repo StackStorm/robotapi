@@ -37,7 +37,7 @@ def change_grip_torque(body):
 
     state = body.state
 
-    AX12.set_elbow_state(state)
+    AX12.set_grip_state(state)
 
     return State(state)
 
