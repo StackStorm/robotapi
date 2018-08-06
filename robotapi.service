@@ -1,0 +1,15 @@
+[Unit]
+Description=Robot API Service
+After=network-online.target
+
+[Service]
+Type=simple
+
+WorkingDirectory=/home/pi/robotapi
+ExecStart=/home/pi/robotapi/.venv/bin/python3 -m swagger_server
+StandardOutput=/home/pi/robotapi/stdout.log
+StandardError=/home/pi/robotapi/stderr.log
+Restart=always
+
+[Install]
+WantedBy=network-online.target
