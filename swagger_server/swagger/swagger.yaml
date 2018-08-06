@@ -10,7 +10,8 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "randompi.raspberry.pi"
+#host: "randompi.raspberry.pi"
+host: 192.168.55.11:8080
 basePath: "/v1"
 schemes:
 - "http"
